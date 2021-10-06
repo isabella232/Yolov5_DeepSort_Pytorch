@@ -74,7 +74,7 @@ class Track:
         self.time_since_update = 0
         self.bbox = [0, 0, 0, 0]
 
-        self.state = TrackState.Tentative
+        self.state = TrackState.Confirmed if n_init <= 1 else TrackState.Tentative
         self.features = []
         if feature is not None:
             self.features.append(feature)
